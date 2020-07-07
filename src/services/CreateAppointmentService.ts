@@ -12,9 +12,11 @@ class CreateAppointmentService {
   public async execute({ date, provider }: Request): Promise<Appointment> {
     const appointmentRepository = getCustomRepository(AppointmentRepository);
     const appointmentDate = startOfHour(date);
-    const findAppointmentInSameDate = appointmentRepository.findByDate(
+
+    const findAppointmentInSameDate = await appointmentRepository.findByDate(
       appointmentDate,
     );
+
     if (findAppointmentInSameDate) {
       throw Error('This appointment is already booked');
     }
