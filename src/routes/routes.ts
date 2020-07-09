@@ -4,8 +4,8 @@ import usersRouter from './users.routes';
 
 const routes = Router();
 
-routes.get('/api/rota', (req, res) =>
-  res.json({ message: 'Rotas funcionando' }),
+routes.get('/api', (req, res) =>
+  res.status(200).json({ message: 'API está em execução' }),
 );
 
 routes.use('/appointments', appointmentsRouter);

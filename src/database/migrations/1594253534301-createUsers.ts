@@ -14,7 +14,7 @@ export default class createUsers1594253534301 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'user',
+            name: 'name',
             type: 'varchar',
             isNullable: false,
           },
